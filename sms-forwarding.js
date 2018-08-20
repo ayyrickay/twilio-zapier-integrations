@@ -11,7 +11,7 @@
 exports.handler = function(context, event, callback) {
   const twiml = new Twilio.twiml.MessagingResponse();
   const got=require('got')
-	got(event.zapUrl, {method: 'POST', body: event})
+  got(event.zapUrl, {method: 'POST', body: event})
     .then((data) => {
     	// Send SMS with Twilio Client
       context.getTwilioClient().messages.create({
